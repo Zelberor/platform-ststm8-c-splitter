@@ -15,7 +15,7 @@
 from platformio.public import PlatformBase
 
 
-class Ststm8Platform(PlatformBase):
+class Ststm8csplitterPlatform(PlatformBase):
 
     def configure_default_packages(self, variables, targets):
         if "arduino" in variables.get("pioframework", []):

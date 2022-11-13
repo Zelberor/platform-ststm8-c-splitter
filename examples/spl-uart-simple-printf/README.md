@@ -19,7 +19,7 @@ How to build PlatformIO based project
 
 ```shell
 # Change directory to example
-$ cd platform-ststm8/examples/spl-uart-simple-printf
+$ cd platform-ststm8-c-splitter/examples/spl-uart-simple-printf
 
 # Build project
 $ pio run

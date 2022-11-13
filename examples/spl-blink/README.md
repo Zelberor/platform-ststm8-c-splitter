@@ -19,7 +19,7 @@ How to build PlatformIO based project
 
 ```shell
 # Change directory to example
-$ cd platform-ststm8/examples/spl-blink
+$ cd platform-ststm8-c-splitter/examples/spl-blink
 
 # Build project
 $ pio run

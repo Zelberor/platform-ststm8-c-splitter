@@ -19,7 +19,7 @@ How to build PlatformIO based project
 
 ```shell
 # Change directory to example
-$ cd platform-ststm8/examples/spl-flash
+$ cd platform-ststm8-c-splitter/examples/spl-flash
 
 # Build project
 $ pio run

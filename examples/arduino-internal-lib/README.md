@@ -19,7 +19,7 @@ How to build PlatformIO based project
 
 ```shell
 # Change directory to example
-$ cd platform-ststm8/examples/arduino-internal-lib
+$ cd platform-ststm8-c-splitter/examples/arduino-internal-lib
 
 # Build project
 $ pio run

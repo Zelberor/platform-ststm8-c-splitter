@@ -19,7 +19,7 @@ How to build PlatformIO based project
 
 ```shell
 # Change directory to example
-$ cd platform-ststm8/examples/native-blink
+$ cd platform-ststm8-c-splitter/examples/native-blink
 
 # Build project
 $ pio run

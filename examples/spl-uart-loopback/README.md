@@ -19,7 +19,7 @@ How to build PlatformIO based project
 
 ```shell
 # Change directory to example
-$ cd platform-ststm8/examples/spl-uart-loopback
+$ cd platform-ststm8-c-splitter/examples/spl-uart-loopback
 
 # Build project
 $ pio run

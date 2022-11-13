@@ -19,7 +19,7 @@ How to build PlatformIO based project
 
 ```shell
 # Change directory to example
-$ cd platform-ststm8/examples/arduino-fade-all-pins
+$ cd platform-ststm8-c-splitter/examples/arduino-fade-all-pins
 
 # Build project
 $ pio run
