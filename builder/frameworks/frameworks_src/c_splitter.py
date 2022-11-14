@@ -18,7 +18,7 @@ def split_c_files(env, node):
     orig_file_name = node.name
     orig_file_name_wo_ext, orig_extension = os.path.splitext(orig_file_name)
 
-    print(f'Splitting {orig_file_name} into:')
+    print(f'Splitting {orig_file_name} into {len(split_src_file_content) - 1} parts')
 
     part_files = []
     # The part of the file before the first split will be included in every part
@@ -32,7 +32,6 @@ def split_c_files(env, node):
             part_file.write(part_file_content)
 
         part_files.append(env.File(part_file_path))
-        print(f'\t{part_file_name}')
 
     return env.Object(part_files, CPPPATH=[source_file_directory] + env['CPPPATH'])
 

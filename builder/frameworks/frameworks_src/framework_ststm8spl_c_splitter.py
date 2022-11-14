@@ -80,7 +80,8 @@ class FrameworkStStm8Spl(framework.Framework):
             ],
 
             CPPPATH=[
-                os.path.join(self.framework_dir, "Libraries", "STM8S_StdPeriph_Driver", "inc")
+                os.path.join(self.framework_dir, "Libraries", "STM8S_StdPeriph_Driver", "inc"),
+                os.path.join(self.framework_dir, "Libraries", "STM8S_StdPeriph_Driver", "src")  # Not necessary for compilation, but helps IDEs like CLion find the function definitions
             ]
         )
 

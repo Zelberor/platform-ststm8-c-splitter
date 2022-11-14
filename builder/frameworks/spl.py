@@ -26,8 +26,8 @@ from frameworks_src import framework_ststm8spl_c_splitter
 
 env = DefaultEnvironment()
 
-framwork_ststm8spl = framework_ststm8spl_c_splitter.FrameworkStStm8Spl(env)
-
 env.Append(
     CFLAGS=["--opt-code-size"]
 )
+
+framwork_ststm8spl = framework_ststm8spl_c_splitter.FrameworkStStm8Spl(env)

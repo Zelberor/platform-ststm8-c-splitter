@@ -27,9 +27,8 @@ from frameworks_src import framework_sduino_ststm8_c_splitter
 
 env = DefaultEnvironment()
 
-framework_sduino = framework_sduino_ststm8_c_splitter.FrameworkSduino(env)
-
 env.Append(CCFLAGS=[
-    "--less-pedantic",
     "--opt-code-size"
 ])
+
+framework_sduino = framework_sduino_ststm8_c_splitter.FrameworkSduino(env)
