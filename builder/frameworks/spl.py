@@ -29,6 +29,5 @@ env = DefaultEnvironment()
 framwork_ststm8spl = framework_ststm8spl_c_splitter.FrameworkStStm8Spl(env)
 
 env.Append(
-    CFLAGS=["--opt-code-size"])
-
-
+    CFLAGS=["--opt-code-size"]
+)

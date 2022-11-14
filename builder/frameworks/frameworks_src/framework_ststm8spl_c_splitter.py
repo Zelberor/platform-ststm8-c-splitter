@@ -88,11 +88,11 @@ class FrameworkStStm8Spl(framework.Framework):
         # Target: Build SPL Library
         #
 
-        self.env.BuildSources(
+        self.env.Append(LIBS=self.env.BuildLibrary(
             os.path.join("$BUILD_DIR", "FrameworkSpl"),
-            os.path.join(self.framework_dir, "Libraries", "STM8S_StdPeriph_Driver", "src"),
-            src_filter=["-<*>"] + [" +<%s>" % f for f in self._get_core_files()]
-        )
+            os.path.join(self.framework_dir, "Libraries", "STM8S_StdPeriph_Driver"),
+            src_filter=["-<*>"] + [" +<src/%s>" % f for f in self._get_core_files()]
+        ))
 
     # Fixes possible issue with "ASlink-Warning-No definition of area SSEG" error.
     # This message means that main.c is not pulled in by the linker because there was no

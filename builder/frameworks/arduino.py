@@ -22,21 +22,14 @@ kinds of creative coding, interactive objects, spaces or physical experiences.
 http://arduino.cc/en/Reference/HomePage
 """
 
-import os
-import sys
-
 from SCons.Script import DefaultEnvironment
+from frameworks_src import framework_sduino_ststm8_c_splitter
 
 env = DefaultEnvironment()
 
+framework_sduino = framework_sduino_ststm8_c_splitter.FrameworkSduino(env)
 
-CCFLAGS=[
-                "--less-pedantic"
-            ],
-
-
-
-
-
-
-
+env.Append(CCFLAGS=[
+    "--less-pedantic",
+    "--opt-code-size"
+])

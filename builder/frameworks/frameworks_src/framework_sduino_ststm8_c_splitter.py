@@ -27,14 +27,17 @@ import os
 import SCons.Script
 
 from . import framework
+from . import framework_ststm8spl_c_splitter
 
 
 class FrameworkSduino(framework.Framework):
 
     def __init__(self, env: SCons.Script.DefaultEnvironment):
         super().__init__(env, 'framework-sduino-ststm8-c-splitter')
+        framework_spl = framework_ststm8spl_c_splitter.FrameworkStStm8Spl(env)
+        self._add_sources_to_env()
 
-    def add_sources_to_env(self):
+    def _add_sources_to_env(self):
         self.env.Append(
             CPPDEFINES=[
                 "ARDUINO_ARCH_STM8",
@@ -45,14 +48,7 @@ class FrameworkSduino(framework.Framework):
 
             CPPPATH=[
                 os.path.join(self.framework_dir, "cores", self.env.BoardConfig().get("build.core")),
-                os.path.join(self.framework_dir, "STM8S_StdPeriph_Driver", "inc")
             ],
-
-            LIBPATH=[
-                os.path.join(self.framework_dir, "STM8S_StdPeriph_Driver", "lib")
-            ],
-
-            LIBS=[self.board_config.get("build.mcu")[0:8].upper()],
 
             LIBSOURCE_DIRS=[
                 os.path.join(self.framework_dir, "libraries")
@@ -72,13 +68,13 @@ class FrameworkSduino(framework.Framework):
                 ]
             )
             libs.append(self.env.BuildLibrary(
-                os.path.join("$BUILD_DIR", "FrameworkArduinoVariant"),
+                os.path.join("$BUILD_DIR", "FrameworkSduinoVariant"),
                 os.path.join(self.framework_dir, "variants", self.env.BoardConfig().get("build.variant"))
             ))
 
         libs.append(self.env.BuildLibrary(
-            os.path.join("$BUILD_DIR", "FrameworkArduino"),
+            os.path.join("$BUILD_DIR", "FrameworkSduino"),
             os.path.join(self.framework_dir, "cores", self.env.BoardConfig().get("build.core"))
         ))
 
-        self.env.Prepend(LIBS=libs)
+        self.env.Append(LIBS=libs)

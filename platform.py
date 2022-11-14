@@ -18,8 +18,6 @@ from platformio.public import PlatformBase
 class Ststm8csplitterPlatform(PlatformBase):
 
     def configure_default_packages(self, variables, targets):
-        if "arduino" in variables.get("pioframework", []):
-            self.packages["toolchain-sdcc"]["version"] = "~1.30901.0"
         return super().configure_default_packages(variables, targets)
 
     def get_boards(self, id_=None):

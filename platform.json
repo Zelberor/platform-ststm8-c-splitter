@@ -32,10 +32,7 @@
 		"toolchain-sdcc": {
 			"type": "toolchain",
 			"owner": "platformio",
-			"version": ">=1.40100.0,<1.40201.0",
-			"optionalVersions": [
-				"~1.30901.0"
-			]
+			"version": ">=1.40100.0,<1.40201.0"
 		},
 		"framework-sduino-ststm8-c-splitter": {
 			"type": "framework",
@@ -45,7 +42,7 @@
 		"framework-ststm8spl-c-splitter": {
 			"type": "framework",
 			"optional": false,
-			"version": "0.0.1"
+			"version": "https://github.com/Zelberor/framework-ststm8spl-c-splitter#development"
 		},
 		"tool-stm8binutils": {
 			"type": "uploader",
